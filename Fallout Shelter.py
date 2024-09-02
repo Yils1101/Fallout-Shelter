@@ -31,7 +31,8 @@ while opc_menu != 2:
             print("1. Ver los moradores")
             print("2. Agregar morador")
             print("3. Editar morador")
-            print("4. Salir")
+            print("4. Actualizar morador")
+            print("5. Salir")
             opc_menu2 = int(input("\nElegir opcion: "))
 
             if opc_menu2 == 1:
@@ -117,5 +118,37 @@ while opc_menu != 2:
                         cursor.execute(f"INSERT INTO hijo VALUES ('{id_mayor_hijo}', '{nombre_hijo}', '{apellido}', '{sexo_hijo}', '{padre}', '{madre}')")
                         connection.commit()
                     cursor.close()
+
+            elif opc_menu2 == 3:
+                editar_nombre = input("¿Nombre del morador a editar?: ")
+                editar_apellido = input("¿Apellido del morador a editar?: ")
+                resp_edit_nomb = input("¿Quieres editar el nombre del morador?: ")
+                if resp_edit_nomb == "si":
+                    nuevo_nombre = input("¿Cual es el nuevo nombre del morador?: ")
+                resp_edit_apellido = input("¿Quieres editar el apellido del morador?: ")
+                if resp_edit_apellido == "si":
+                    nuevo_apellido = input("¿Cual es el nuevo apellido del morador?: ")
+                resp_edit_sex = input("¿Quieres editar el sexo del morador?: ")
+                if resp_edit_sex == "si":
+                    nuevo_sex = input("¿Cual es el nuevo sexo del morador?: ")
+                resp_edit_origen = input("¿Quieres cambiar el origen del morador?: ")
+                if resp_edit_origen == "si":
+                    nuevo_origen = input("¿Cual es el nuevo origen del morador?: ")
+                resp_edit_padre = input("¿Quieres cambiar el nombre padre de el morador?: ")
+                if resp_edit_padre == "si":
+                    nuevo_nombre_padre = input("¿Cual es el nuevo nombre del padre del morador?: ")
+                resp_edit_madre = input("¿Quieres cambiar el nombre de la madre de el morador?: ")
+                if resp_edit_madre == "si":
+                    nuevo_nombre_madre = input("¿Cual es el nuevo nombre de la madre del morador?: ")
+                resp_edit_pareja_nombre = input("¿Quieres cambiar el nombre de la pareja de el morador?: ")
+                if resp_edit_pareja_nombre == "si":
+                    nuevo_nombre_pareja = input("¿Cual es el nuevo nombre de la pareja del morador?: ")
+                resp_edit_pareja_apellido =  input("¿Quieres cambiar el apellido de la pareja de el morador?: ")
+                if resp_edit_pareja_apellido == "si":
+                    nuevo_apellido_pareja = input("¿Cual es el nuevo apellido de la pareja de el morador?: ")
+                cursor=connection.cursor()
+                
+
+
     else:
         print("Esta opcion no esta disponible")
